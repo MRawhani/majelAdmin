@@ -1,0 +1,28 @@
+
+let instance = null;
+export class Cacher{
+    cache ={};
+    constructor(){
+        
+        if(!instance){
+            instance = this;
+        }
+
+        return instance;
+    }
+   
+    
+    isVlaueCached=(key)=>{
+        
+        return this.getCachedValue(key);
+    }
+
+    cachValue=(key, value)=>{
+        this.cache[key] = value;
+    }
+
+    getCachedValue=(key)=>{
+   
+        return this.cache[key];
+    }
+}
